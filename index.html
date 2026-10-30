@@ -9,7 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
-  <!-- Face-API.js (@vladmandic/face-api) -->
   <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -99,7 +98,7 @@
       animation: pulseRing 3s ease-in-out infinite;
     }
 
-    /* Overlay video & canvas for face-api.js */
+    /* Overlay video & canvas*/
     .faceapi-stage {
       position: relative;
       width: 100%;
@@ -159,7 +158,7 @@
           <div class="flex items-center gap-2">
             <h1 id="headerSchoolName" class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white">SMP NEGERI 1 GALIS</h1>
             <span id="headerAiStatusBadge" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Face-API.js Neural Engine
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Face Neural Engine
             </span>
           </div>
           <p id="headerSchoolSub" class="text-xs text-slate-500 dark:text-slate-400">Sistem Absensi Wajah Digital Terpadu • IFP & PID Ready</p>
@@ -223,7 +222,7 @@
             Terminal Absensi Biometrik <span class="text-grad-primary">Guru & Siswa</span>
           </h2>
           <p id="publicAnnouncement" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-            Pastikan wajah terlihat jelas tanpa penutup. Sistem otomatis mendeteksi wajah menggunakan Face-API.js dan mencatat kehadiran.
+            Pastikan wajah terlihat jelas tanpa penutup. Sistem otomatis mendeteksi wajah dan mencatat kehadiran.
           </p>
         </div>
 
@@ -256,7 +255,7 @@
           <div class="p-4 sm:px-6 border-b border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
             <div class="flex items-center gap-2.5">
               <span id="camStatusDot" class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
-              <span class="font-bold text-sm sm:text-base">Kamera Pemindai Wajah (Face-API.js)</span>
+              <span class="font-bold text-sm sm:text-base">Kamera Pemindai Wajah</span>
               <span id="camModeBadge" class="px-2.5 py-0.5 text-[11px] font-semibold rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
                 Memuat Model AI...
               </span>
@@ -275,7 +274,7 @@
 
           <!-- Camera Video & Biometric HUD Overlay -->
           <div class="relative bg-slate-950 aspect-video w-full overflow-hidden flex items-center justify-center select-none faceapi-stage">
-            <!-- Real WebRTC Video Element + Face-API Canvas Overlay -->
+            <!-- Real WebRTC Video Element-->
             <video id="publicVideo" autoplay playsinline muted class="w-full h-full object-cover hidden z-10"></video>
             <canvas id="publicCanvas" class="w-full h-full object-cover hidden z-20 pointer-events-none"></canvas>
 
@@ -284,7 +283,7 @@
               <div class="w-14 h-14 rounded-2xl bg-grad-primary flex items-center justify-center text-2xl shadow-xl mb-3 animate-bounce">
                 <i class="fa-solid fa-brain"></i>
               </div>
-              <div class="font-extrabold text-base sm:text-lg">Memuat Model AI Face-API.js...</div>
+              <div class="font-extrabold text-base sm:text-lg">Memuat Model AI...</div>
               <p id="aiLoadingSubtext" class="text-xs text-slate-300 mt-1 max-w-md">Mengunduh TinyFaceDetector, FaceLandmark68Net & FaceRecognitionNet dari CDN...</p>
             </div>
 
@@ -324,7 +323,7 @@
             <!-- HUD Top-Left Telemetry -->
             <div class="absolute top-4 left-4 z-25 bg-slate-900/75 backdrop-blur-md border border-white/10 rounded-xl px-3 py-2 text-[11px] font-mono text-slate-200 space-y-0.5 pointer-events-none">
               <div class="flex items-center gap-2">
-                <span class="text-cyan-400 font-bold">ENGINE:</span> <span id="hudEngineStatus">Face-API.js</span>
+                <span class="text-cyan-400 font-bold">ENGINE:</span> <span id="hudEngineStatus">Faceprint</span>
                 <span class="text-emerald-400 font-bold ml-2">MATCHER:</span> <span id="hudMatcherCount">0 Vektor</span>
               </div>
               <div id="hudDescriptorStatus" class="text-slate-400">Total Profil Terdaftar: <span id="hudTotalRegistered" class="text-white font-bold">0</span> Orang</div>
@@ -656,7 +655,7 @@
               <div>
                 <h2 class="text-xl sm:text-2xl font-extrabold flex items-center gap-2.5">
                   <i class="fa-solid fa-chalkboard-user text-indigo-500"></i>
-                  <span>Manajemen Data Guru & Rekam Wajah (Face-API.js)</span>
+                  <span>Manajemen Data Guru & Rekam Wajah</span>
                 </h2>
                 <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Kelola daftar guru, mata pelajaran/jabatan, nomor WhatsApp, dan rekam descriptor wajah langsung dari kamera.</p>
               </div>
@@ -687,7 +686,7 @@
                       <th class="py-3.5 px-4">NIP / ID</th>
                       <th class="py-3.5 px-4">Jabatan / Mata Pelajaran</th>
                       <th class="py-3.5 px-4">No. WhatsApp</th>
-                      <th class="py-3.5 px-4">Status Wajah (Face-API)</th>
+                      <th class="py-3.5 px-4">Status Wajah</th>
                       <th class="py-3.5 px-4 text-right">Aksi (Rekam / Edit / Hapus)</th>
                     </tr>
                   </thead>
@@ -707,9 +706,9 @@
               <div>
                 <h2 class="text-xl sm:text-2xl font-extrabold flex items-center gap-2.5">
                   <i class="fa-solid fa-user-graduate text-cyan-500"></i>
-                  <span>Manajemen Data Siswa & Rekam Wajah (Face-API.js)</span>
+                  <span>Manajemen Data Siswa & Rekam Wajah</span>
                 </h2>
-                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Kelola data siswa meliputi NISN, Nama Lengkap, Kelas, WA Orang Tua, serta rekam wajah biometrik Face-API.js.</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Kelola data siswa meliputi NISN, Nama Lengkap, Kelas, WA Orang Tua, serta rekam wajah biometrik</p>
               </div>
               <button onclick="openPersonModal('Siswa')" class="px-5 py-2.5 rounded-xl bg-grad-primary text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg glow-accent hover:opacity-95 shrink-0">
                 <i class="fa-solid fa-user-plus"></i>
@@ -752,7 +751,7 @@
                       <th class="py-3.5 px-4">NISN / NIS</th>
                       <th class="py-3.5 px-4">Kelas</th>
                       <th class="py-3.5 px-4">WA Orang Tua / Wali</th>
-                      <th class="py-3.5 px-4">Status Wajah (Face-API)</th>
+                      <th class="py-3.5 px-4">Status Wajah</th>
                       <th class="py-3.5 px-4 text-right">Aksi (Rekam / Edit / Hapus)</th>
                     </tr>
                   </thead>
@@ -869,7 +868,7 @@
                 <i class="fa-solid fa-sliders text-amber-500"></i>
                 <span>Pengaturan Sistem, Tampilan & Backup Data</span>
               </h2>
-              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Kustomisasi identitas sekolah, batas akurasi Face-API.js, tema gradasi, skala tampilan IFP/PID, akun admin, serta backup/restore JSON.</p>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5">Kustomisasi identitas sekolah, batas akurasi, tema gradasi, skala tampilan IFP/PID, akun admin, serta backup/restore JSON.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -987,7 +986,7 @@
                     <h3 class="font-bold text-base">3. Backup & Restore Database (.JSON)</h3>
                   </div>
                   <p class="text-xs text-slate-500 dark:text-slate-400">
-                    Seluruh data guru, siswa, vektor descriptor wajah 128-dimensi <strong>face-api.js</strong>, riwayat absensi, dan pengaturan disimpan di penyimpanan lokal browser. Kompatibel penuh dengan file backup <code>.json</code> dari aplikasi Face-API sebelumnya.
+                    Seluruh data guru, siswa, vektor descriptor wajah 128-dimensi, riwayat absensi, dan pengaturan disimpan di penyimpanan lokal browser. Kompatibel penuh dengan file backup <code>.json</code> dari aplikasi Faceprint sebelumnya.
                   </p>
 
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1062,14 +1061,14 @@
   </div>
 
   <!-- ==========================================
-       MODAL 2: TAMBAH / EDIT GURU & SISWA + REKAM WAJAH FACE-API.JS
+       MODAL 2: TAMBAH / EDIT GURU & SISWA + REKAM WAJAH
        ========================================== -->
   <div id="modalPersonForm" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full p-6 shadow-2xl space-y-5 my-8">
       <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
           <h3 id="modalPersonTitle" class="font-extrabold text-lg">Tambah Data Guru & Rekam Wajah</h3>
-          <p class="text-xs text-slate-500 dark:text-slate-400">Hadapkan wajah ke kamera lalu klik "Rekam & Simpan Wajah (Face-API)" untuk menyimpan vektor 128-dimensi</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Hadapkan wajah ke kamera lalu klik "Rekam & Simpan Wajah" untuk menyimpan vektor 128-dimensi</p>
         </div>
         <button onclick="closePersonModal()" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center">
           <i class="fa-solid fa-xmark"></i>
@@ -1110,12 +1109,12 @@
           </div>
         </div>
 
-        <!-- Biometric Face-API.js Registration Box with Live Camera -->
+        <!-- Biometric Registration Box with Live Camera -->
         <div class="p-4 rounded-2xl bg-slate-100/80 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 space-y-3">
           <div class="flex items-center justify-between flex-wrap gap-2">
             <span class="text-xs font-bold flex items-center gap-1.5">
               <i class="fa-solid fa-face-viewfinder text-indigo-500"></i>
-              <span>Perekaman Wajah AI (Face-API.js Descriptor 128-Float)</span>
+              <span>Perekaman Wajah AI</span>
             </span>
             <span id="personFaceStatusBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-600 dark:text-amber-400">Belum Direkam</span>
           </div>
@@ -1318,7 +1317,7 @@
   <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 max-w-sm w-full pointer-events-none"></div>
 
   <!-- ==========================================
-       APPLICATION JAVASCRIPT (WITH FACE-API.JS)
+       APPLICATION JAVASCRIPT
        ========================================== -->
   <script>
     const STORAGE_KEY = 'SMARTFACE_EDU_STATE_V1';
@@ -1327,7 +1326,7 @@
     const MODEL_URL = 'https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/model/';
     const MATCH_THRESHOLD = 0.45;
 
-    // Application & Face-API State
+    // Application
     let appState = null;
     let currentMode = 'public'; // 'public' | 'admin'
     let isAdminAuthenticated = false;
@@ -1367,7 +1366,7 @@
         settings: {
           schoolName: 'SMP NEGERI 1 GALIS',
           schoolSub: 'Sistem Absensi Wajah Digital Terpadu • IFP & PID Ready',
-          announcement: 'Pastikan wajah terlihat jelas di area pemindai. Sistem otomatis mendeteksi wajah menggunakan Face-API.js dan mencatat jam Masuk & Pulang.',
+          announcement: 'Pastikan wajah terlihat jelas di area pemindai. Sistem otomatis mendeteksi wajah dan mencatat jam Masuk & Pulang.',
           jamMasuk: '07:00',
           jamPulang: '14:00',
           themeMode: 'dark',
